@@ -1,5 +1,10 @@
-
-
+.pokemons {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
 
 .normal {
     background-color: #a6a877;
@@ -73,75 +78,90 @@
     background-color: #f9aec7;
 }
 
-.pokemons{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-
-.pokemon{
+.pokemon {
     display: flex;
     flex-direction: column;
-    align-self: flex-end;
     margin: .5rem;
     padding: 1rem;
-    color: #ffffff;
-    border-radius: 1rem;  
-    height: 90%;  
+    border-radius: 1rem;
 }
+
 .pokemon .number {
-    color: white;
+    color: #000;
+    opacity: .3;
     text-align: right;
+    font-size: .625rem;
 }
-.pokemon .name{
+
+.pokemon .name {
     text-transform: capitalize;
+    color: #fff;
+    margin-bottom: .25rem;
 }
-.pokemon .detail{
+
+.pokemon .detail {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
 }
+
 .pokemon .detail .types {
     padding: 0;
     margin: 0;
     list-style: none;
 }
-.pokemon .detail .types .type{
-    color: white;
-    filter: brightness(1.1);
+
+.pokemon .detail .types .type {
+    color: #fff;
     padding: .25rem .5rem;
     margin: .25rem 0;
-    border-radius: 1rem;
     font-size: .625rem;
+    border-radius: 1rem;
+    filter: brightness(1.1);
     text-align: center;
 }
-.pokemon .detail img{
-    max-width: 50%;
-    max-height: 50px;
+
+.pokemon .detail img {
+    max-width: 100%;
+    height: 70px;
 }
 
-@media screen and (min-width: 576px){
-    .pokemons{
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        list-style: none;
-        margin: 0;
-        padding: 0;
+.pagination {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+}
+
+.pagination button {
+    padding: .25rem .5rem;
+    margin: .25rem 0;
+    font-size: .625rem;
+    color: #fff;
+    background-color: #6c79db;
+    border: none;
+    border-radius: 1rem;
+}
+
+@media screen and (min-width: 380px) {
+    .pokemons {
+        grid-template-columns: 1fr 1fr;
     }
 }
-@media screen and (min-width: 992px){
-    .pokemons{
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        list-style: none;
-        margin: 0;
-        padding: 0;
+
+@media screen and (min-width: 576px) {
+    .pokemons {
+        grid-template-columns: 1fr 1fr 1fr;
     }
-    
+}
+
+@media screen and (min-width: 992px) {
+    .pokemons {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
 }
 /* ele coloca o max width para tamanhos de telas maiores q isso
 afim de criar um quadrado de tamanho 992px quando a tela for maior q isso
